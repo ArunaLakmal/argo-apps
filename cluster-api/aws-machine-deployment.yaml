@@ -1,0 +1,24 @@
+---
+apiVersion: cluster.x-k8s.io/v1alpha3
+kind: MachineDeployment
+metadata:
+  name: techcrumble-cluster-api-md-0
+  namespace: default
+spec:
+  clusterName: techcrumble-cluster-api
+  replicas: 3
+  selector:
+    matchLabels: null
+  template:
+    spec:
+      bootstrap:
+        configRef:
+          apiVersion: bootstrap.cluster.x-k8s.io/v1alpha3
+          kind: KubeadmConfigTemplate
+          name: techcrumble-cluster-api-md-0
+      clusterName: techcrumble-cluster-api
+      infrastructureRef:
+        apiVersion: infrastructure.cluster.x-k8s.io/v1alpha3
+        kind: AWSMachineTemplate
+        name: techcrumble-cluster-api-md-0
+      version: v1.18.2

@@ -1,0 +1,9 @@
+---
+apiVersion: infrastructure.cluster.x-k8s.io/v1alpha3
+kind: AWSCluster
+metadata:
+  name: techcrumble-cluster-api
+  namespace: default
+spec:
+  region: us-west-2
+  sshKeyName: cluster-api
