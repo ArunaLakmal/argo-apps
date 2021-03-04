@@ -6,7 +6,7 @@ metadata:
   namespace: default
 spec:
   clusterName: techcrumble-cluster-api
-  replicas: 4
+  replicas: 3
   selector:
     matchLabels: null
   template:
